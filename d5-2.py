@@ -51,3 +51,49 @@ with open('d5.txt') as f:
     print('answer ', ans)
 
 
+'''
+EXPLAIN
+
+we have seed range: seed_start -> seed_end
+
+from seed-to-soil map, we can calculate:
+- range: src_start -> src_end
+- range: dest_start -> dest_end
+
+
+let assume in case 1, seed_start and seed_end are both between src_start and src_end,
+
+src_start         seed_start    seed_end    src_end
+  |-----------------S-----------------E--------|
+
+            |-----------------S-----------------E--------|
+         dest_start      (NEW_start)        (NEW_end)    dest_end
+
+when they are mapped to destination, it must intersect. so the new range for 
+the next mapping = NEW_start -> NEW_end (use this as input for the next mapping)
+
+
+CASE 1:
+src_start         seed_start    seed_end    src_end
+  |-----------------S-----------------E--------|
+intersection mapping: seed_start -> seed_end
+
+
+CASE 2:
+seed_start        src_start        src_end     seed_end
+  (S)-----------------|-----------------|--------(E)
+intersection mapping: src_start -> src_end
+
+
+CASE 3:
+seed_start        src_start        seed_end    src_end
+  (S)-----------------|-----------------(E)--------|
+intersection mapping: src_start -> seed_end
+
+
+CASE 4:
+src_start      seed_start         src_end    seed_end
+  |-----------------(S)-----------------|--------(E)
+intersection mapping: seed_start -> src_end
+
+'''
