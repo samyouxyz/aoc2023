@@ -74,26 +74,26 @@ the next mapping = NEW_start -> NEW_end (use this as input for the next mapping)
 
 
 CASE 1:
-src_start         seed_start    seed_end    src_end
+dest_start         seed_start    seed_end    dest_end
   |-----------------S-----------------E--------|
 intersection mapping: seed_start -> seed_end
 
 
 CASE 2:
-seed_start        src_start        src_end     seed_end
+seed_start        dest_start        dest_end     seed_end
   (S)-----------------|-----------------|--------(E)
-intersection mapping: src_start -> src_end
+intersection mapping: dest_start -> dest_end
 
 
 CASE 3:
-seed_start        src_start        seed_end    src_end
+seed_start        dest_start        seed_end    dest_end
   (S)-----------------|-----------------(E)--------|
-intersection mapping: src_start -> seed_end
+intersection mapping: dest_start -> seed_end
 
 
 CASE 4:
-src_start      seed_start         src_end    seed_end
+dest_start      seed_start         dest_end    seed_end
   |-----------------(S)-----------------|--------(E)
-intersection mapping: seed_start -> src_end
+intersection mapping: seed_start -> dest_end
 
 '''
